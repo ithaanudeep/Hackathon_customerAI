@@ -11,7 +11,7 @@ def fetch_relevant_docs(query, top_k=3):
 
     documents = []
     for row in results:
-        print("DEBUG - Couchbase row:", row)  # Debugging line
+        #print("DEBUG - Couchbase row:", row)  # Debugging line
         documents.append(row)
 
     if not documents:

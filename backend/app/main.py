@@ -5,6 +5,7 @@ from app.generate import generate_answer
 from app.retrieval import fetch_relevant_docs
 from app.database import collection
 from app.embeddings import get_embedding
+from fastapi.middleware.cors import CORSMiddleware
 import logging
 from textblob import TextBlob 
 from app.database import cluster  # Import the cluster object
@@ -127,3 +128,10 @@ def get_dashboard_stats():
     except Exception as e:
         return {"error": str(e)}
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)

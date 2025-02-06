@@ -4,3 +4,5 @@ openai
 numpy 
 scipy 
 couchbase
+textblob
+openai==0.28
